@@ -115,6 +115,7 @@ const getMerkleProof = async() => {
 const checkWhitelistStatus = async() => {
     const merkleProof = await getMerkleProof();
     const userAddress = await getAddress();
+    console.log(merkleProof)
     const isWhitelisted = await others.verifyPublicAllowList(userAddress, merkleProof).catch(err => console.log(err));
     if (await checkMintingLive()) {
         if (isWhitelisted) {
