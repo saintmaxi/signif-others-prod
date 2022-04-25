@@ -101,7 +101,7 @@ const setMaxMint = async() => {
 
 const getMerkleProof = async() => {
     const _senderAddress = await getAddress();
-    const _proof = await fetch(`https://www.wavecatchers.io/.netlify/functions/merkle?addr=${_senderAddress}`).then(res => res.text());
+    const _proof = await fetch(`https://www.significantothers.xyz/.netlify/functions/merkle?addr=${_senderAddress}`).then(res => res.text());
     try {
         const _proofArray = _proof ? JSON.parse(_proof) : [];
         return _proofArray
@@ -113,12 +113,12 @@ const getMerkleProof = async() => {
 };
 
 const checkWhitelistStatus = async() => {
-    // const merkleProof = await getMerkleProof();
-    // const userAddress = await getAddress();
-    // const isWhitelisted = await others.verifyPublicAllowList(userAddress, merkleProof).catch(err => console.log(err));
+    const merkleProof = await getMerkleProof();
+    const userAddress = await getAddress();
+    const isWhitelisted = await others.verifyPublicAllowList(userAddress, merkleProof).catch(err => console.log(err));
     isWhitelisted=true
-    if (await checkMintingLive() || true) {
-        if (isWhitelisted || true) {
+    if (await checkMintingLive()) {
+        if (isWhitelisted) {
                 $("#whitelisted").html("you made the allowlist!<br>claim 1 free with the 'mint allowlist' button.");
                 $("#claim-button").removeClass("hidden");
             }
