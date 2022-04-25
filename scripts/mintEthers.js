@@ -116,7 +116,6 @@ const checkWhitelistStatus = async() => {
     const merkleProof = await getMerkleProof();
     const userAddress = await getAddress();
     const isWhitelisted = await others.verifyPublicAllowList(userAddress, merkleProof).catch(err => console.log(err));
-    isWhitelisted=true
     if (await checkMintingLive()) {
         if (isWhitelisted) {
                 $("#whitelisted").html("you made the allowlist!<br>claim 1 free with the 'mint allowlist' button.");
