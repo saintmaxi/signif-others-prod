@@ -161,11 +161,6 @@
     position: relative;
 }
 
-
-#bird-banner {
-    width: 100%;
-}
-
 /* end minting styling */
 
 @media screen and (max-width: 767px) {

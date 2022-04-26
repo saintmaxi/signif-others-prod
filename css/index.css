@@ -364,6 +364,12 @@ marquee {
         min-height: 6vh;
     }
 
+    #mobile-wallet-connect-div .button:hover {
+		background-color: #ffe25f !important;
+    }
+
+
+
     /* end header/navbar styling */
 
 
