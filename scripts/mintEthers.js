@@ -346,9 +346,9 @@ const updateInfo = async () => {
     $("#mobile-account").addClass(`connected`);
 };
 
-ethereum.on("accountsChanged", async(accounts_)=>{
-    location.reload();
-});
+// ethereum.on("accountsChanged", async(accounts_)=>{
+//     location.reload();
+// });
 
 window.onload = async()=>{
     await updateInfo();
