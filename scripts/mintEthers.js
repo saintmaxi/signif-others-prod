@@ -202,7 +202,7 @@ const publicMint = async() => {
     }
     catch (error) {
         if ((error.message).includes("User max mint limit")) {
-            await displayErrorMessage(`Error: Max 10 mints per wallet!`)
+            await displayErrorMessage(`Error: Max 10 public mints per wallet!`)
         }
         else if ((error.message).includes("5 mints per tx")) {
             await displayErrorMessage(`Error: Max 5 mints per transaction!`)
