@@ -233,7 +233,7 @@ h5 {
     line-height: 1.5vw;
     padding: 20px;
     text-align: center;
-    border-radius: .2em;
+    border-radius: 10px;
 }
 
 .etherscan-link {
@@ -251,7 +251,7 @@ h5 {
     left: 50%;
     transform: translate(-50%, -50%);
     width: 33vw;
-    border-radius: .2em;
+    border-radius: 10px;
     text-align: center;
     box-shadow: 0 0 5000px 5000px rgba(0,0,0,0.88);
 }
@@ -266,7 +266,7 @@ h5 {
     width: 53vw;
     height: 35vh;
     border: solid .5vw black;
-    border-radius: .2em;
+    border-radius: 10px;
     text-align: center;
     box-shadow: 0 0 5000px 5000px rgba(0,0,0,0.88);
 }
@@ -328,7 +328,7 @@ h5 {
 .box {
 	border-style: solid;
 	border-color: black;
-	border-radius: 20px;
+	border-radius: 10px;
 	border-width: .5vw;
 	padding: 20px;
 	backdrop-filter: blur(25px);
@@ -407,7 +407,7 @@ h5 {
 		width:80%;
 		background-color: white;
 		color: black;
-		border-radius: 10px;
+		border-radius: 5px;
 	}
 
 	#mobile-account.connected {
