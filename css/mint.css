@@ -139,7 +139,7 @@
     margin-bottom: 1vw;
 }
 
-#mint button {
+#mint button, #about button {
     font-size: 2vw;
     letter-spacing: 5px;
 }
@@ -222,7 +222,7 @@
         width: 100%;
     }
     
-    #mint button {
+    #mint button, #about button {
         font-size: 3vh;
         letter-spacing: 5px;
     }
