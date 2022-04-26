@@ -154,11 +154,11 @@ const allowlistMint = async() => {
         }
     }
     catch (error) {
-        if ((error.message).includes("User not on WL")) {
+        if ((error.message).includes("Not on WL")) {
             await displayErrorMessage(`Error: Not on allowlist!`)
         }
-        else if ((error.message).includes("User max WL mint limit")) {
-            await displayErrorMessage(`Error: Max 1 free claim for allowlist!`)
+        else if ((error.message).includes("Already minted free")) {
+            await displayErrorMessage(`Error: Already claimed allowlist!`)
         }
         else if ((error.message).includes("Contract is paused")) {
             await displayErrorMessage(`Error: Mint not live yet!`)
@@ -189,9 +189,6 @@ const publicMint = async() => {
             if (numberToMint > MAX_MINT) {
                 await displayErrorMessage(`Max ${MAX_MINT} mints per transaction!`);
             }
-            else if (numberToMint + minted > MAX_SUPPLY) {
-                await displayErrorMessage("Mint amount would exceed max public supply!")
-            }
 
             const cost = ethers.BigNumber.from(priceWei).mul(numberToMint);
 
@@ -207,8 +204,14 @@ const publicMint = async() => {
         if ((error.message).includes("User max mint limit")) {
             await displayErrorMessage(`Error: Max 10 mints per wallet!`)
         }
+        else if ((error.message).includes("5 mints per tx")) {
+            await displayErrorMessage(`Error: Max 5 mints per transaction!`)
+        }
         else if ((error.message).includes("Not enough ETH sent")) {
             await displayErrorMessage(`Error: Not enough ETH sent!`)
+        }
+        else if ((error.message).includes("Not enough mints left")) {
+            await displayErrorMessage(`Error: Not enough mints left!`)
         }
         else if ((error.message).includes("Contract is paused")) {
             await displayErrorMessage(`Error: Mint not live yet!`)
@@ -228,7 +231,6 @@ const publicMint = async() => {
 }
 
 const checkMintingLive = async() => {
-    return true
     const live = !(await others.paused());
     if (!live) {
         $("#mint-button").addClass("hidden");
@@ -333,7 +335,7 @@ setInterval(async()=>{
     await updateInfo();
     await updateMintInfo();
     await checkMintingLive();
-    // await checkWhitelistStatus();
+    await checkWhitelistStatus();
 }, 5000)
 
 const updateInfo = async () => {
@@ -351,7 +353,7 @@ ethereum.on("accountsChanged", async(accounts_)=>{
 window.onload = async()=>{
     await updateInfo();
     await updateMintInfo();
-    // await checkMintingLive();
+    await checkMintingLive();
     await checkWhitelistStatus();
 };
 
