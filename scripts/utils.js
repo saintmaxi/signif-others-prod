@@ -30,3 +30,12 @@ function toggleMenu() {
     el.classList.toggle('expanded')
     el.classList.toggle('collapsed')
  }
+
+ function revealMint() {
+     $("#about").addClass("fading-out");
+     $('#about').on("animationend", function(){
+        $("#about").addClass("hidden");
+        $("#mint").removeClass("hidden");
+        $("#mint").addClass("fading-in");
+    });
+ }

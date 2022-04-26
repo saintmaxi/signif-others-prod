@@ -33,17 +33,18 @@ h1, h2 {
 
 h1 {
 	font-family: "Silly";
-	color: black;
+	color: rgb(223, 221, 221);
 	font-size: 3vw !important;
 	line-height: 3vw !important;
+	margin: 0 !important;
 }
 
 p {
-	font-family: "Courier New";
+	font-family: "Silly";
 	text-align: justify;
 	font-weight: bold;
-	font-size: 1.4vw !important;
-	line-height: 1.7vw !important;
+	font-size: 1.8vw !important;
+	line-height: 2vw !important;
 }
 
 #desktop-wallet-connect-div {
@@ -98,8 +99,8 @@ p {
 }
 
 .section {
-	padding-top: 10px;
-	padding-bottom: 10px !important;
+	padding-top: 25px;
+	padding-bottom: 25px !important;
 	background-position: 0 0;
 	background-size: 500px
 
@@ -381,8 +382,8 @@ h5 {
 	}
 
 	.button {
-		font-size: 2.3vh;
-		line-height: 2.8vh ;	
+		font-size: 2.8vh;
+		line-height: 3.2vh ;	
 		padding: 5px;
 		border-width: 5px;
 		min-height: 9vh;
@@ -392,7 +393,10 @@ h5 {
 		font-size: 2.8vh !important;
 		line-height: 3.1vh !important;
 		margin: 0 !important;
-		padding: 10px !important;
+		padding-top: 10px !important;
+		padding-bottom: 10px !important;
+		padding-left: 0px !important;
+		padding-right: 0px !important;
 	}
 
 	.hide-on-mobile {
