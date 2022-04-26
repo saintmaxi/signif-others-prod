@@ -148,7 +148,7 @@ const allowlistMint = async() => {
             const gasLimit = await others.estimateGas.allowListMint(1, merkleProof, {value: cost});
             const newGasLimit = parseInt((gasLimit * 1.2)).toString();
             
-            await wavecatchers.OGMint(merkleProof, {gasLimit: newGasLimit}).then( async(tx_) => {
+            await others.allowListMint(1, merkleProof, {gasLimit: newGasLimit}).then( async(tx_) => {
                 await waitForTransaction(tx_);
             });
         }
