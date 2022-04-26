@@ -119,13 +119,14 @@ const checkWhitelistStatus = async() => {
     const isWhitelisted = await others.verifyPublicAllowList(userAddress, merkleProof).catch(err => console.log(err));
     if (await checkMintingLive()) {
         if (isWhitelisted) {
-                $("#whitelisted").html("you made the allowlist!<br>claim 1 free with the 'mint allowlist' button.");
-                $("#claim-button").removeClass("hidden");
-            }
+            $("#whitelisted").html("you made the allowlist!<br>claim 1 free with the 'mint allowlist' button.");
+            $("#claim-button").removeClass("hidden");
+        }
         else {
-                $("#whitelisted").html(`you are not on the allowlist or have already claimed!`);
-                $("#claim-button").addClass("hidden");
-                //  Purchase on secondary on <a href="${openseaLink}" target="_blank" class="w-inline-block" style="text-decoration:none;color:#03B4FC;">OPENSEA⬈</a>.
+            // $("#whitelisted").html(`you are not on the allowlist or have already claimed!`);
+            $("#whitelisted").html("");
+            $("#claim-button").addClass("hidden");
+            //  Purchase on secondary on <a href="${openseaLink}" target="_blank" class="w-inline-block" style="text-decoration:none;color:#03B4FC;">OPENSEA⬈</a>.
         }
     }
     else {
