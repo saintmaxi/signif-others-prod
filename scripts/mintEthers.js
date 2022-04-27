@@ -249,9 +249,9 @@ const checkMintingLive = async() => {
 const updateMintInfo = async() => {
     let minted = Number(await others.totalSupply());
     $("#num-minted").html(minted);
-    if (minted == MAX_SUPPLY) {
-        $("#sold-out").html(`sold out. <br><br>available on <a href="${openseaLink}" target="_blank" class="w-inline-block" style="text-decoration:none;color:blue;">opensea⬈</a> & <a href="${looksrareLink}" target="_blank" class="w-inline-block" style="text-decoration:none;color:green;">looksrare⬈</a>`);
-        $("#mint-buttons").remove();
+    if (minted >= 4919) {
+        $("#sold-out").html(`public mint sold out. <br><br>available on <a href="${openseaLink}" target="_blank" class="w-inline-block" style="text-decoration:none;color:blue;">opensea⬈</a> & <a href="${looksrareLink}" target="_blank" class="w-inline-block" style="text-decoration:none;color:green;">looksrare⬈</a>`);
+        $("#mint-button").remove();
         $("#quantity-controls").remove();
     }
 }
