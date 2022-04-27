@@ -14,7 +14,7 @@ const MAX_SUPPLY = 5000;
 const priceWei = "15000000000000000";
 const priceEth = .015
 const openseaLink = "#";
-const looksrareLink = "#";
+const looksrareLink = "https://looksrare.org/collections/0x6659F3B08403C11a2d98B4beC0027c1E41844283";
 
 /*********************************************************************************/
 /********************************DEV CONFIG********************************/
