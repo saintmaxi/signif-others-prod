@@ -182,8 +182,8 @@ const publicMint = async() => {
     const minted = Number(await others.totalSupply());
 
     try {
-        if (minted == MAX_SUPPLY) {
-            await displayErrorMessage("Sorry, no Significant Others remaining for public!")
+        if (minted == 4919) {
+            await displayErrorMessage("Sorry, no significant sthers remaining for public! Remaining mints are allowlist + team.")
         }
         else {
             if (numberToMint > MAX_MINT) {
