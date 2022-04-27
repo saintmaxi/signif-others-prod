@@ -182,7 +182,7 @@ const publicMint = async() => {
     const minted = Number(await others.totalSupply());
 
     try {
-        if (minted == 4919) {
+        if (minted == 5000) {
             await displayErrorMessage("Sorry, no significant sthers remaining for public! Remaining mints are allowlist + team.")
         }
         else {
@@ -211,7 +211,7 @@ const publicMint = async() => {
             await displayErrorMessage(`Error: Not enough ETH sent!`)
         }
         else if ((error.message).includes("Not enough mints left")) {
-            await displayErrorMessage(`Error: Not enough mints left!`)
+            await displayErrorMessage(`Error: Not enough public mints left! Remaining are for team and allowlist.`)
         }
         else if ((error.message).includes("Contract is paused")) {
             await displayErrorMessage(`Error: Mint not live yet!`)
