@@ -335,7 +335,7 @@ setInterval(async()=>{
     await updateInfo();
     await updateMintInfo();
     await checkMintingLive();
-    await checkWhitelistStatus();
+    // await checkWhitelistStatus();
 }, 5000)
 
 const updateInfo = async () => {
@@ -354,7 +354,7 @@ window.onload = async()=>{
     await updateInfo();
     await updateMintInfo();
     await checkMintingLive();
-    await checkWhitelistStatus();
+    // await checkWhitelistStatus();
 };
 
 window.onunload = async()=>{
